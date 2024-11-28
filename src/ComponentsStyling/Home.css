@@ -1,0 +1,76 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-content {
+    animation: fadeIn 1s ease-out;
+}
+
+.home-container {
+    padding-top: 10%;
+    text-align: center;
+}
+
+.home-title {
+    font-size: 6em;
+    font-family: "DynaPuff", system-ui;
+    color: #1E90FF;
+}
+
+.home-subtitle {
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    margin-top: 10px;
+}
+
+.app-info {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 50px;
+    background-color: #f0f8ff;
+    border-radius: 50px;
+    border: 2px solid #7db0f3;
+    text-align: left;
+}
+
+.info-title {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #1E90FF;
+}
+
+.info-description {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.info-list {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.info-list li {
+    margin-bottom: 10px;
+}
+
+.info-list i {
+    margin-right: 10px;
+    font-size: 1.4em;
+    color: #4A90E2;
+}
+
+.info-conclusion {
+    font-size: 1.2em;
+    font-style: italic;
+}
