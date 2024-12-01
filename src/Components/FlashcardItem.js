@@ -1,0 +1,25 @@
+import { useEffect } from "react";
+import Card from 'react-bootstrap/Card';
+import { Link } from "react-router-dom";
+
+const FlashcardItem = (props)=> {
+  useEffect(() => {
+    console.log("Flashcard Item:", props.myflashcard);
+  }, [props.myflashcard]); 
+
+  return (
+    <div>
+      <Card>
+        <Card.Header>{props.myflashcard.Title}</Card.Header>
+        <Card.Body>
+          <blockquote className="blockquote mb-0">
+            <p>{props.myflashcard.Text}</p>
+          </blockquote>
+        </Card.Body>
+        <Link className="btn btn-primary" to={"/edit/"+props.myflashcard._id}>Edit</Link>
+      </Card>
+    </div>
+  );
+}
+
+export default FlashcardItem;

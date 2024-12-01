@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import axios from "axios"; //import axios
+import axios from "axios"; //import axios
 
 import '../ComponentsStyling/Create.css';
 
@@ -10,7 +10,7 @@ const Create = () => {
     const handleCreateFlashCard = (e) => {
         e.preventDefault();
 
-        // console.log(`Title: ${title}, Text: ${text}`);
+        console.log(`Title: ${title}, Text: ${text}`);
 
         if (title && text) {
             setTitle('');
@@ -19,14 +19,14 @@ const Create = () => {
 
         }
 
-        // const flashCard = {
-        //     title: title,
-        //     text: text,
-        // };
+        const flashCard = {
+            title: title,
+            text: text,
+        };
 
-        // axios.post('http://localhost:4000/api/movies', text)
-        //     .then((res) => console.log(res.data))
-        //     .catch((err) => console.log(err.data));
+        axios.post('http://localhost:4000/api/flashcards', flashCard)
+            .then((res) => console.log(res.data))
+            .catch((err) => console.log(err.data));
     }
 
     return (
