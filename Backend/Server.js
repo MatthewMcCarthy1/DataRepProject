@@ -56,6 +56,12 @@ app.put('/api/flashcards/:id', async (req, res) => {
     res.send(flashcard);
 });
 
+app.delete('/api/flashcards/:id', async (req, res) => {
+    console.log('Deleting flashcard with ID:', req.params.id);
+    const flashcard = await flashcardModel.findByIdAndDelete(req.params.id);
+    res.status(200).send({ message: "Flashcard deleted successfully", flashcard });
+});
+
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });

@@ -1,11 +1,25 @@
 import { useEffect } from "react";
 import Card from 'react-bootstrap/Card';
 import { Link } from "react-router-dom";
+import axios from "axios";
+import Button from 'react-bootstrap/Button';
 
-const FlashcardItem = (props)=> {
+const FlashcardItem = (props) => {
   useEffect(() => {
     console.log("Flashcard Item:", props.myflashcard);
-  }, [props.myflashcard]); 
+  }, [props.myflashcard]);
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+
+    axios.delete('http://localhost:4000/api/flashcards/' + props.myflashcard._id)
+      .then(() => {
+        props.Reload(); 
+      })
+      .catch((error) => {
+        console.error("Error deleting flashcard:", error);
+      });
+  };
 
   return (
     <div>
@@ -16,7 +30,8 @@ const FlashcardItem = (props)=> {
             <p>{props.myflashcard.text}</p>
           </blockquote>
         </Card.Body>
-        <Link className="btn btn-primary" to={"/Edit/"+props.myflashcard._id}>Edit</Link>
+        <Link className="btn btn-primary" to={"/Edit/" + props.myflashcard._id}>Edit</Link>
+        <Button variant="danger" onClick={handleDelete}>Delete</Button>
       </Card>
     </div>
   );
