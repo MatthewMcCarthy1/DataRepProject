@@ -1,0 +1,49 @@
+.create-container {
+    margin: 80px;
+    padding: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    background-color: #81c9f8;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #085af3;
+    border-radius: 10px;
+}
+
+textarea {
+    height: 200px;
+}
+
+button {
+    background-color: #fefffe;
+    color: black;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #229e55;
+}
+

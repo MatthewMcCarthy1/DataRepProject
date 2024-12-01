@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import '../ComponentsStyling/Navigation.css'
+import '../NavigationBar/Navigation.css'
 
 
 const NavigationBar = () => {
@@ -11,7 +11,7 @@ const NavigationBar = () => {
                 <Nav className="me-auto">
                     <Nav.Link href="/" className="nav-link-spacing">Home</Nav.Link>
                     <Nav.Link href="/Create" className="nav-link-spacing">Create</Nav.Link>
-                    <Nav.Link href="/View" className="nav-link-spacing">View</Nav.Link>
+                    <Nav.Link href="/View" className="nav-link-spacing">View/Update</Nav.Link>
                     <Nav.Link href="/Delete" className="nav-link-spacing">Delete</Nav.Link>
                 </Nav>
             </Container>

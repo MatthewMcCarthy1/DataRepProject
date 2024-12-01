@@ -5,14 +5,14 @@ const Home = () => {
         <div className='page-content'>
 
             <div className='home-container'>
-                <h1 className='home-title'>Welcome to Flash Cards!</h1>
-                <p className='home-subtitle'>Your very own personal Flash Card storage application where creating, reading, updating and deleting flash cards is easy and straight forward.</p>
+                <h1 className='home-title'>Welcome to Flashcards!</h1>
+                <p className='home-subtitle'>Your very own personal Flashcard storage application where creating, reading, updating and deleting flashcards is easy and straight forward.</p>
             </div>
 
             <div className='app-info'>
                 <p className='info-title'>Why Choose This App?</p>
                 <p className='info-description'>
-                    This Flash Card App is designed to help you learn and organize your study materials with ease. Whether you're creating, viewing, updating, or deleting flashcards, our app offers a smooth and efficient experience.
+                    This Flashcard App is designed to help you learn and organize your study materials with ease. Whether you're creating, viewing, updating, or deleting flashcards, our app offers a smooth and efficient experience.
                 </p>
                 <ul className='info-list'>
                     <li><i className='fas fa-plus-circle'></i><strong> Create Flashcards:</strong> Easily add new cards with text, images, or links to reinforce your learning.</li>
