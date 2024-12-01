@@ -16,7 +16,7 @@ const FlashcardItem = (props)=> {
             <p>{props.myflashcard.text}</p>
           </blockquote>
         </Card.Body>
-        <Link className="btn btn-primary" to={"/edit/"+props.myflashcard._id}>Edit</Link>
+        <Link className="btn btn-primary" to={"/Edit/"+props.myflashcard._id}>Edit</Link>
       </Card>
     </div>
   );

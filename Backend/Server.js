@@ -44,12 +44,17 @@ app.post('/api/flashcards', async (req, res) => {
 app.get('/api/flashcards', async (req, res) => {
     const flashcards = await flashcardModel.find({});
     res.json(flashcards);
-  });
+});
 
-  app.get('/api/flashcards/:id', async (req, res) => {
+app.get('/api/flashcards/:id', async (req, res) => {
     const flashcard = await flashcardModel.findById(req.params.id);
     res.send(flashcard);
-  });
+});
+
+app.put('/api/flashcards/:id', async (req, res) => {
+    let flashcard = await flashcardModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    res.send(flashcard);
+});
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
