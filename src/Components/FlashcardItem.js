@@ -10,10 +10,10 @@ const FlashcardItem = (props)=> {
   return (
     <div>
       <Card>
-        <Card.Header>{props.myflashcard.Title}</Card.Header>
+        <Card.Header>{props.myflashcard.title}</Card.Header>
         <Card.Body>
           <blockquote className="blockquote mb-0">
-            <p>{props.myflashcard.Text}</p>
+            <p>{props.myflashcard.text}</p>
           </blockquote>
         </Card.Body>
         <Link className="btn btn-primary" to={"/edit/"+props.myflashcard._id}>Edit</Link>

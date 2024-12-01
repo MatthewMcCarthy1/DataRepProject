@@ -10,22 +10,21 @@ const Create = () => {
     const handleCreateFlashCard = (e) => {
         e.preventDefault();
 
-        console.log(`Title: ${title}, Text: ${text}`);
-
-        if (title && text) {
-            setTitle('');
-            setText('');
-        } else {
-
+        if(!title || !text) {
+            alert("Please fill in both fields.");
+            return;
         }
 
-        const flashCard = {
-            title: title,
-            text: text,
-        };
+        const flashCard = {title, text};
+
+        console.log(flashCard);
 
         axios.post('http://localhost:4000/api/flashcards', flashCard)
-            .then((res) => console.log(res.data))
+            .then((res) => {
+                console.log(res.data);
+                setTitle('');
+                setText('');
+            })
             .catch((err) => console.log(err.data));
     }
 

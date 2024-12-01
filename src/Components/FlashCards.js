@@ -1,11 +1,11 @@
 import FlashcardItem from "./FlashcardItem";
 
-const Flashcards = (props)=>{
-    return props.myflashcards.map(
-        (flashCard)=>{
-            return <FlashcardItem myflashcard={flashCard} key={flashCard._id} />
+const FlashCards = (props)=>{
+    return props.myFlashcards.map(
+        (flashcard)=>{
+            return <FlashcardItem myflashcard={flashcard} key={flashcard._id} />
         }
     );
 }
 
-export default Flashcards;
+export default FlashCards;
