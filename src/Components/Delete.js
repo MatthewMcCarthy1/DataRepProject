@@ -1,9 +1,9 @@
 const Delete = () => {
     return (
-        <div>
-          <h1>Delete</h1>
+        <div className="deleted-container">
+            <h3>Deleted Flashcards</h3>
         </div>
-      );
-}
+    ); 
+};
 
 export default Delete;

@@ -6,14 +6,6 @@ const port = 4000;
 const cors = require('cors');
 app.use(cors());
 
-app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
-///////////
-
 //POST middleware
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -57,17 +49,19 @@ app.put('/api/flashcards/:id', async (req, res) => {
 });
 
 app.delete('/api/flashcards/:id', async (req, res) => {
-    console.log('Deleting flashcard with ID:', req.params.id);
-    const flashcard = await flashcardModel.findByIdAndDelete(req.params.id);
+    // console.log('Deleting flashcard with ID:', req.params.id);
+    const flashcard = await flashcardModel.findByIdAndDelete(req.params.id,
+        
+    );
     res.status(200).send({ message: "Flashcard deleted successfully", flashcard });
-});
-
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
 });
 
 //server errors
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Something went wrong!');
+});
+
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
 });
