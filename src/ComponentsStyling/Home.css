@@ -20,7 +20,7 @@
 }
 
 .home-title {
-    font-size: 6em;
+    font-size: 110px;
     font-family: "DynaPuff", system-ui;
     color: #1E90FF;
 }
@@ -35,28 +35,28 @@
     max-width: 800px;
     margin: 40px auto;
     padding: 50px;
-    background-color: #f0f8ff;
+    background-color: #e3f2fd;
     border-radius: 50px;
     border: 2px solid #7db0f3;
     text-align: left;
 }
 
 .info-title {
-    font-size: 2em;
+    font-size: 40px;
     font-weight: bold;
     margin-bottom: 15px;
     color: #1E90FF;
 }
 
 .info-description {
-    font-size: 1.2em;
+    font-size: 19px;
     margin-bottom: 15px;
 }
 
 .info-list {
     list-style-type: none;
     padding-left: 0;
-    font-size: 1.1em;
+    font-size: 18px;
     margin-bottom: 20px;
 }
 
@@ -66,11 +66,11 @@
 
 .info-list i {
     margin-right: 10px;
-    font-size: 1.4em;
+    font-size: 22px;
     color: #4A90E2;
 }
 
 .info-conclusion {
-    font-size: 1.2em;
+    font-size: 20px;
     font-style: italic;
 }

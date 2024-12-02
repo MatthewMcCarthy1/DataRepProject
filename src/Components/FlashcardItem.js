@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Button from 'react-bootstrap/Button';
+import '../ComponentsStyling/ViewFlashcard.css';
 
 const FlashcardItem = (props) => {
   useEffect(() => {
@@ -14,7 +15,7 @@ const FlashcardItem = (props) => {
 
     axios.delete('http://localhost:4000/api/flashcards/' + props.myflashcard._id)
       .then(() => {
-        props.Reload(); 
+        props.Reload();
       })
       .catch((error) => {
         console.error("Error deleting flashcard:", error);
@@ -22,16 +23,16 @@ const FlashcardItem = (props) => {
   };
 
   return (
-    <div>
+    <div className="card-container">
       <Card>
         <Card.Header>{props.myflashcard.title}</Card.Header>
         <Card.Body>
-          <blockquote className="blockquote mb-0">
-            <p>{props.myflashcard.text}</p>
-          </blockquote>
+          <p>{props.myflashcard.text}</p>
         </Card.Body>
-        <Link className="btn btn-primary" to={"/Edit/" + props.myflashcard._id}>Edit</Link>
-        <Button variant="danger" onClick={handleDelete}>Delete</Button>
+        <div className="button-container">
+          <Link className="btn btn-primary" to={"/Edit/" + props.myflashcard._id}>Edit</Link>
+          <Button variant="danger" onClick={handleDelete}>Delete</Button>
+        </div>
       </Card>
     </div>
   );

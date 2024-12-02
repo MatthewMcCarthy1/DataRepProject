@@ -1,6 +1,7 @@
 import FlashCards from "./FlashCards";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import '../ComponentsStyling/ViewFlashcard.css';
 
 const View = () => {
 
@@ -35,7 +36,7 @@ const View = () => {
 
   return (
     <div>
-      <h3>All Your Flashcards Stored Together For Easy Viewing!</h3>
+      <h3 className="view-title">All Your Flashcards Stored Together For Easy Viewing!</h3>
       <FlashCards myFlashcards={flashcards} ReloadData={Reload} />
     </div>
   );
