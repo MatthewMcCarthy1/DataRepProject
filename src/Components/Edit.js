@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import '../ComponentsStyling/Edit.css';
 
 export default function Edit(props) {
     let { id } = useParams();
@@ -32,24 +33,28 @@ export default function Edit(props) {
     }
 
     return (
-        <div>
+        <div className="edit-container">
+
+            <h1>Edit Flashcard</h1>
+
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label>Flashcard Title: </label>
-                    <input type="text"
-                        className="form-control"
+                    <input
+                        type="text"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)} />
                 </div>
+
                 <div className="form-group">
                     <label>Flashcard Text: </label>
-                    <input type="text"
-                        className="form-control"
+                    <textarea
+                        type="text"
                         value={text}
                         onChange={(e) => setText(e.target.value)} />
                 </div>
                 <div className="form-group">
-                    <input type="submit" value="Edit Flashcard" className="btn btn-primary" />
+                    <input type="submit" className="btn btn-primary" />
                 </div>
             </form>
         </div>

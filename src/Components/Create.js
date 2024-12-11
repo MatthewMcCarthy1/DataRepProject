@@ -25,7 +25,7 @@ const Create = () => {
                 setTitle('');
                 setText('');
             })
-            .catch((err) => console.log(err.data));
+            .catch((err) => console.log(err.response || err));
     }
 
     return (

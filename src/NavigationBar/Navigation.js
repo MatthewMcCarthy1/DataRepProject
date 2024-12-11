@@ -12,7 +12,6 @@ const NavigationBar = () => {
                     <Nav.Link href="/" className="nav-link-spacing">Home</Nav.Link>
                     <Nav.Link href="/Create" className="nav-link-spacing">Create</Nav.Link>
                     <Nav.Link href="/View" className="nav-link-spacing">View/Update</Nav.Link>
-                    <Nav.Link href="/Delete" className="nav-link-spacing">Deleted flashcards</Nav.Link>
                 </Nav>
             </Container>
         </Navbar>

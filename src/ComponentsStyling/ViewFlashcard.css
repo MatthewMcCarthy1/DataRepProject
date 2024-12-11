@@ -60,3 +60,18 @@
     display: flex;
     justify-content: space-between; 
 }
+
+.search-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar {
+    width: 80%;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #085af3;
+    border-radius: 10px;
+    margin-top: 10px;
+    max-width: 500px;
+  }
