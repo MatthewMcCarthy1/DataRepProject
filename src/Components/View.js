@@ -8,9 +8,10 @@ const View = () => {
   const [flashcards, setFlashCards] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
 
+  //reloads flashcard data
   const Reload = (searchQuery = "") => {
     console.log("Reloading flashcard data...");
-    axios.get(`http://localhost:4000/api/flashcards?search=${searchQuery}`)
+    axios.get(`http://localhost:4000/api/flashcards?search=${searchQuery}`) //searchQuery to filter flaschards
       .then((response) => {
         setFlashCards(response.data);
       })
@@ -23,9 +24,10 @@ const View = () => {
     Reload();
   }, []);
 
+  //handles search input change event 
   const handleSearch = (event) => {
     const query = event.target.value;
-    setSearchQuery(query);
+    setSearchQuery(query); //update the searchQuery state with new value
     Reload(query);
   };
 

@@ -44,7 +44,7 @@ app.get('/api/flashcards', async (req, res) => {
 
     try {
         const flashcards = await flashcardModel.find({
-            title: { $regex: searchQuery, $options: 'i' }
+            title: { $regex: searchQuery, $options: 'i' } //case insensitive regex search
         });
         res.json(flashcards);
     } catch (error) {
