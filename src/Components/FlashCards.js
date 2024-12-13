@@ -1,8 +1,8 @@
 import FlashcardItem from "./FlashcardItem";
 
-const FlashCards = (props)=>{
+const FlashCards = (props) => {
     return props.myFlashcards.map(
-        (flashcard)=>{
+        (flashcard) => {
             return <FlashcardItem myflashcard={flashcard} key={flashcard._id} Reload={props.ReloadData} />
         }
     );

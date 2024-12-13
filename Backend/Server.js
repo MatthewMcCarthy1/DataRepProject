@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const port = 4000;
 
-//CORS middleware //////
+//CORS middleware 
 const cors = require('cors');
 app.use(cors());
 
@@ -32,22 +32,22 @@ app.post('/api/flashcards', async (req, res) => {
         await newFlashcard.save();
 
         res.status(201).json({ message: 'Flashcard created successfully', flashcard: newFlashcard });
-    } catch(err) {
+    } catch (err) {
         console.error(err);
         res.status(500).json({ message: 'Failed to create flashcard', error: err });
     }
 })
 
-//get retrieve all flashcards
+//get: retrieve all flashcards
 app.get('/api/flashcards', async (req, res) => {
     const searchQuery = req.query.search || '';
 
     try {
         const flashcards = await flashcardModel.find({
-            title: { $regex: searchQuery, $options: 'i'}
+            title: { $regex: searchQuery, $options: 'i' }
         });
         res.json(flashcards);
-    } catch(error) {
+    } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Error retrieving flashcards', error });
     }
@@ -71,7 +71,7 @@ app.put('/api/flashcards/:id', async (req, res) => {
 app.delete('/api/flashcards/:id', async (req, res) => {
     // console.log('Deleting flashcard with ID:', req.params.id);
     const flashcard = await flashcardModel.findByIdAndDelete(req.params.id,
-        
+
     );
     res.status(200).send({ message: "Flashcard deleted successfully", flashcard });
 });

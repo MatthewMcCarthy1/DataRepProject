@@ -10,12 +10,12 @@ const Create = () => {
     const handleCreateFlashCard = (e) => {
         e.preventDefault();
 
-        if(!title || !text) {
+        if (!title || !text) {
             alert("Please fill in both fields.");
             return;
         }
 
-        const flashCard = {title, text};
+        const flashCard = { title, text };
 
         console.log(flashCard);
 

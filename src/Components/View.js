@@ -6,9 +6,9 @@ import '../ComponentsStyling/ViewFlashcard.css';
 const View = () => {
 
   const [flashcards, setFlashCards] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");  
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const Reload = (searchQuery="") => {
+  const Reload = (searchQuery = "") => {
     console.log("Reloading flashcard data...");
     axios.get(`http://localhost:4000/api/flashcards?search=${searchQuery}`)
       .then((response) => {
@@ -25,8 +25,8 @@ const View = () => {
 
   const handleSearch = (event) => {
     const query = event.target.value;
-    setSearchQuery(query);  
-    Reload(query);  
+    setSearchQuery(query);
+    Reload(query);
   };
 
   return (
@@ -34,12 +34,12 @@ const View = () => {
       <h3 className="view-title">All Your Flashcards Stored Together For Easy Viewing!</h3>
 
       <div className="search-container">
-        <input 
-          type="text" 
-          className="search-bar" 
-          placeholder="Search flashcards..." 
-          value={searchQuery} 
-          onChange={handleSearch} 
+        <input
+          type="text"
+          className="search-bar"
+          placeholder="Search flashcards..."
+          value={searchQuery}
+          onChange={handleSearch}
         />
       </div>
 
